@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftSoup
 
 class ViewController: UIViewController {
     // Setting the light on variable for controlling background color
@@ -19,6 +20,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         Label1.text = "Simon's App"
         updateUI()
+        print("test1")
+        
+        webscrape()
     }
     
     fileprivate func updateUI() {
@@ -34,11 +38,25 @@ class ViewController: UIViewController {
         }
     }
     
+
+    
     @IBAction func buttonPressed(_ sender: Any) {
         lightOn.toggle()
         updateUI()
     }
     
+    func webscrape() {
+        do {
+           let html = "<html><head><title>First parse</title></head>"
+               + "<body><p>Parsed HTML into a doc.</p></body></html>"
+           let doc: Document = try SwiftSoup.parse(html)
+           try print(doc.text())
+        } catch Exception.Error(let type, let message) {
+            print(message)
+        } catch {
+            print("error")
+        }
+    }
     
     
 }
