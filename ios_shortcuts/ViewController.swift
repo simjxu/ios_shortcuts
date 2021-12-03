@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         print("test1")
         
         webscrape()
+        webscrape2()
     }
     
     fileprivate func updateUI() {
@@ -56,6 +57,18 @@ class ViewController: UIViewController {
         } catch {
             print("error")
         }
+    }
+    
+    func webscrape2() {
+        do {
+            let url = URL(string:"https://en.wikipedia.org/wiki/Aglaonema")!
+            let html = try String(contentsOf: url)
+            print(html.prefix(200))
+        } catch {
+            print(error)
+        }
+        
+        
     }
     
     
