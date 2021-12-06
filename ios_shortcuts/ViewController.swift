@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         print("test1")
         
         webscrape()
-        webscrape2()
+//        webscrape2()
     }
     
     fileprivate func updateUI() {
@@ -58,18 +58,19 @@ class ViewController: UIViewController {
             print("error")
         }
     }
-    
-    func webscrape2() {
-        do {
-            let url = URL(string:"https://en.wikipedia.org/wiki/Aglaonema")!
-            let html = try String(contentsOf: url)
-            print(html.prefix(200))
-        } catch {
-            print(error)
-        }
-        
-        
-    }
+
+    // Doesn't work: probably some issue with login required to access incline
+//    func webscrape2() {
+//        do {
+//            let url = URL(string:)!
+//            let html = try String(contentsOf: url)
+//            print(html.prefix(200))
+//        } catch {
+//            print(error)
+//        }
+//
+//
+//    }
     
     
 }
